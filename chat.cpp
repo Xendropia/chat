@@ -21,7 +21,7 @@ std::vector<std::pair<std::string, T>>& User<T>::getMessages() { return messages
 // Chat class implementation
 template<typename T>
 void Chat<T>::registerUser(const T& username, const T& password, const T& name) {
-    // Check if the username already exists
+    // Check if the username already exists. If it does, throw an exception.
     for (const auto& user : users) {
         if (user.getUsername() == username) {
             throw std::invalid_argument("Username already exists. Please choose a different username.");
